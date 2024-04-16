@@ -29,7 +29,6 @@ function program_test {
 	cp $PROGDIR/$1.vmh $SRCPATH/memory.vmh
 	mkdir -p $LOGDIR/program
 	$BINDIR/sim > $LOGDIR/program/$1
-	# $BINDIR/sim 
 	rm memory.vmh
 }
 

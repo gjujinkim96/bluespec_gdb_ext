@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ubuntu:20.04
+FROM ubuntu:focal-20240410
 WORKDIR /build
 
 # Installing Haskell libraries(for bsc)
@@ -83,10 +83,18 @@ ENV PATH="/opt/riscv/bin:$PATH"
 RUN ./configure --prefix=/opt/riscv
 RUN make
 
+
+
 # Installing necessary package for gdb extension
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python3.9 \
     libelf-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# For debugging purpose
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    vim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -103,8 +111,9 @@ COPY labs labs
 COPY types_helper types_helper
 ENV TYPES_HELPER=/home/types_helper
 
+# For auto_complete
 COPY setup_auto_complete.sh .
-
+ENV PROGRAMS_DIR=/home/labs/pb_lab5/lib/programs
 RUN echo ' \n\
 . setup_auto_complete.sh \n\
 '  >> ~/.bashrc
