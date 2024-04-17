@@ -4,6 +4,8 @@
 <data gdb_name="eEpoch" bluespec_name="eEpoch" bluespec_type="Bool">
 <data gdb_name="                                                                                                                                                           " bluespec_name="False" bluespec_type="Bool">
 <data gdb_name="f2d" bluespec_name="f2d.first" bluespec_type="Fetch2Decode">
+<data gdb_name="                                                                                                                                                           " bluespec_name="False" bluespec_type="Bool">
+<data gdb_name="executed" bluespec_name="executed" bluespec_type="Executed">
 
 <!-- gdb name with long space = space in gdb -->
 <!-- must be pack()  -->

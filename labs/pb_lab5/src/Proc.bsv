@@ -36,6 +36,10 @@ typedef struct {
   Bool epoch;
 } Fetch2Decode deriving(Bits, Eq);
 
+typedef struct {
+  Addr pc;
+  ExecInst eInst;
+} Executed deriving(Bits, Eq);
 
 (*synthesize*)
 module mkProc(Proc);
@@ -44,6 +48,8 @@ module mkProc(Proc);
   IMemory     iMem  <- mkIMemory;
   DMemory     dMem  <- mkDMemory;
   CsrFile     csrf <- mkCsrFile;
+
+  Reg#(Executed) executed <- mkRegU;
 
   Reg#(ProcStatus)   stat		<- mkRegU;
   Fifo#(1,ProcStatus) statRedirect <- mkBypassFifo;
@@ -112,7 +118,8 @@ module mkProc(Proc);
         let csrVal = isValid(dInst.csr) ? csrf.rd(validValue(dInst.csr)) : ?;
 
     		// Execute         
-        let eInst = exec(dInst, rVal1, rVal2, pc, ppc, csrVal);               
+        let eInst = exec(dInst, rVal1, rVal2, pc, ppc, csrVal);  
+        executed <= Executed{pc:pc, eInst:eInst};
         
         if(eInst.mispredict) begin
           eEpoch <= !eEpoch;
