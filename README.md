@@ -1,5 +1,15 @@
 # Intro
-This project extends Bluespec RISV-V Processor GDB for Lab 5 and Lab 6. Currently, it only supports a limited set of programs: `array_sum_1d`, `array_sum_ij`, `array_sum_ji`, `bubble_sort`, `fibonacci`, and `hanoi_tower`.
+This project offers a dedicated GDB(GNU Debugger) for effectively debugging RISV-V pipelined processors developed with Bluespec.
+
+**Key Features:**
+- **Easy Variable Inspection**: Effortlessly inspect custom variables defined within the processor.
+- **Step Cycle Functionality**: Gain granular control over program execution with step cycle interpretation.
+- **Breakpoints**: Set breakpoints to halt program execution at specific points for detailed examination.
+
+
+![image of running gdb](example/example_img/debugger_set_breakpoint.png)
+
+Please note that this project currently supports debugging for Lab 5 and Lab 6.
 
 ## Table of Contents
 
