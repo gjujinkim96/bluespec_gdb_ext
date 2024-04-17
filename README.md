@@ -183,7 +183,7 @@ Here's an example:
 This example showcases how to add custom variables. Additionally, the second instance illustrates how to insert newlines to improve readability within the debugger interface.
 
 ### Tutorial
-For a more detailed tutorial, please refer to [this link](example/example.md)
+For a more detailed tutorial, please refer to [this link](example/example.md).
 
 ### Acknowledgements
 This project was built based on the work found at https://github.com/sang-jun-kim/CA_Summer_Project. However, please note that the original project is private...
