@@ -7,7 +7,7 @@ This project offers a dedicated GDB(GNU Debugger) for effectively debugging RISV
 - **Breakpoints**: Set breakpoints to halt program execution at specific points for detailed examination.
 
 
-![image of running gdb](example/example_img/debugger_set_breakpoint.png)
+![image of running gdb](example/example_img/debugger_updated.png)
 
 Please note that this project currently supports debugging for Lab 5 and Lab 6.
 
