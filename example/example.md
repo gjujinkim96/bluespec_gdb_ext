@@ -4,9 +4,9 @@ By following this tutorial, you'll gain insights into the process of adding cust
 
 ## Table of Contents
 
-[Getting Started: Running the Debugger](#getting-started-running-the-debugger)
-[Understanding the Debugger Interface](#understanding-the-debugger-interface)
-[Adding New Custom Variables](#adding-new-custom-variables)
+- [Getting Started: Running the Debugger](#getting-started-running-the-debugger)
+- [Understanding the Debugger Interface](#understanding-the-debugger-interface)
+- [Adding New Custom Variables](#adding-new-custom-variables)
 
 ## Getting Started: Running the Debugger
 Before proceeding, ensure you have set up the necessary environment variables and ahve all the required libraries installed. If not, refer to the [Prerequisites](../README.md#prerequisites) section in the main README.
