@@ -260,3 +260,7 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,python,c
+
+!labs/pb_lab5/lib
+!labs/pb_lab6/lab6-1/lib
+!labs/pb_lab6/lab6-2/lib
