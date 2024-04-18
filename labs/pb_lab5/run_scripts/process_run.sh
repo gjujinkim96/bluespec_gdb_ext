@@ -97,7 +97,6 @@ case "$test_type" in
         ;;
 
     *)
-        echo "Unsupported test_type: $test_type found"
-        show_help_and_exit
+        ./risc-v -e "$test_type" "$test_name"
         ;;
 esac

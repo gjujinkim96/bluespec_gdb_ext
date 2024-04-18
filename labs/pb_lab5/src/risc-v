@@ -38,6 +38,13 @@ function decode_test {
   rm -f memory.vmh
 }
 
+function extra_test {
+	cp "$TESTHOME$1/$2.vmh" $SRCPATH/memory.vmh
+	mkdir -p "$LOGDIR/$1"
+	$BINDIR/sim > "$LOGDIR/$1/$2"
+	rm -f memory.vmh
+}
+
 function clean {
 	rm -rf $BUILDDIR
 	rm -rf $LOGDIR
@@ -262,6 +269,15 @@ case "$1" in
   		else
   			echo "Program test '$2' not found."
   		fi;;
+	-e)
+		if [ -f "$TESTHOME$2/$3.vmh" ]; then
+			echo " "
+			echo "testing $2/$3"
+			extra_test "$2" "$3";
+			rm -f memory.vmh
+		else
+			echo "Extra test '$2/$3' not found."
+		fi;;
 
 	-h|--help|*)  echo " ";
 				  echo "Usage : $0 [-c: compile all] [-cd: compile for decode test] [-clean: cleanup build files] [-r: test all] [-rd: run decode ] [-i/-p <test_name>: test specific instruction/program. <test_name> list is shown below.]";

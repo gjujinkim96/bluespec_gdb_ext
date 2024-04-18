@@ -118,6 +118,9 @@ RUN echo ' \n\
 . setup_auto_complete.sh \n\
 '  >> ~/.bashrc
 
+# For assembly code -> vmh
+COPY asm2vmh.sh .
+
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
